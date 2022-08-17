@@ -6,16 +6,7 @@
     <description>Recent content on Day in and day out</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 17 Aug 2022 19:15:51 +0800</lastBuildDate><atom:link href="https://b1d-farewell.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Testing image bend</title>
-      <link>https://b1d-farewell.github.io/posts/2022m8d17h19m15s51/</link>
-      <pubDate>Wed, 17 Aug 2022 19:15:51 +0800</pubDate>
-      
-      <guid>https://b1d-farewell.github.io/posts/2022m8d17h19m15s51/</guid>
-      <description>测试图片是否ok</description>
-    </item>
-    
+    <lastBuildDate>Mon, 25 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://b1d-farewell.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mermaid JS support</title>
       <link>https://b1d-farewell.github.io/posts/mermaid-support/</link>
