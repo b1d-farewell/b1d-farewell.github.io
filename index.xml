@@ -6,7 +6,16 @@
     <description>Recent content on Day in and day out</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 25 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://b1d-farewell.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 17 Aug 2022 19:58:53 +0800</lastBuildDate><atom:link href="https://b1d-farewell.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Test mermaid diagram</title>
+      <link>https://b1d-farewell.github.io/posts/2022m8d17h19m58s51/</link>
+      <pubDate>Wed, 17 Aug 2022 19:58:53 +0800</pubDate>
+      
+      <guid>https://b1d-farewell.github.io/posts/2022m8d17h19m58s51/</guid>
+      <description>sequenceDiagram 老板C -&gt;&gt; 员工C : 开始实行996 par 并行 员工C -&gt;&gt; 员工C : 刷微博 and 员工C -&gt;&gt; 员工C : 工作 and 员工C -&gt;&gt; 员工C : 刷朋友圈 end 员工C --&gt;&gt; 老板C : 9点下班 </description>
+    </item>
+    
     <item>
       <title>Mermaid JS support</title>
       <link>https://b1d-farewell.github.io/posts/mermaid-support/</link>
