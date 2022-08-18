@@ -6,14 +6,17 @@
     <description>Recent content on Day in and day out</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 17 Aug 2022 19:58:53 +0800</lastBuildDate><atom:link href="https://b1d-farewell.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 18 Aug 2022 10:55:37 +0800</lastBuildDate><atom:link href="https://b1d-farewell.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Test mermaid diagram</title>
-      <link>https://b1d-farewell.github.io/posts/2022m8d17h19m58s51/</link>
-      <pubDate>Wed, 17 Aug 2022 19:58:53 +0800</pubDate>
+      <title>C&#43;&#43;中被忽略的细节</title>
+      <link>https://b1d-farewell.github.io/posts/2022m8d18h10m55s36/</link>
+      <pubDate>Thu, 18 Aug 2022 10:55:37 +0800</pubDate>
       
-      <guid>https://b1d-farewell.github.io/posts/2022m8d17h19m58s51/</guid>
-      <description>sequenceDiagram 老板C -&gt;&gt; 员工C : 开始实行996 par 并行 员工C -&gt;&gt; 员工C : 刷微博 and 员工C -&gt;&gt; 员工C : 工作 and 员工C -&gt;&gt; 员工C : 刷朋友圈 end 员工C --&gt;&gt; 老板C : 9点下班 </description>
+      <guid>https://b1d-farewell.github.io/posts/2022m8d18h10m55s36/</guid>
+      <description>Integer promotion Link to heading 比int短，保值提升到int 长度不同，保值提升到更长的signed形式 符号性不同：转换符号
+int main(){ unsigned char a =0, b = 1; cout &amp;lt;&amp;lt; a - b &amp;lt;&amp;lt; endl; // 输出-1 } 但以下情形由于字符的符号性不确定，输出是不确定的
+int main(){ cout &amp;lt;&amp;lt; &amp;#39;\0&amp;#39; - &amp;#39;\xff&amp;#39; &amp;lt;&amp;lt; endl; // 如果是-fsigned-char, 输出1；-funsigned-char则输出-255 } 同理，strcmp、fgetc等标准库函数，都显式地指定了unsigned char。
+Float promotion Link to heading 在无声明或可变参数域中，float提升为double，比如printf(char const* fmt, &amp;hellip;)</description>
     </item>
     
     <item>
@@ -39,15 +42,6 @@ Hello Hello World! Goodbye Goodbye Everybody! Right alighment Link to heading Yo
     </item>
     
     <item>
-      <title>Guia de Sintaxe Markdown</title>
-      <link>https://b1d-farewell.github.io/posts/markdown-syntax.pt-br/</link>
-      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://b1d-farewell.github.io/posts/markdown-syntax.pt-br/</guid>
-      <description>&lt;p&gt;Esse artigo é um exemplo básico para mostrar a sintaxe Markdown que é usada nos arquivos de conteúdo do Hugo. Ele também mostrar como cada elemento básico HTML é estilizado com CSS com os temas do Hugo.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Markdown Syntax Guide</title>
       <link>https://b1d-farewell.github.io/posts/markdown-syntax/</link>
       <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
@@ -57,30 +51,12 @@ Hello Hello World! Goodbye Goodbye Everybody! Right alighment Link to heading Yo
     </item>
     
     <item>
-      <title>Conteúdo Rico</title>
-      <link>https://b1d-farewell.github.io/posts/rich-content.pt-br/</link>
-      <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://b1d-farewell.github.io/posts/rich-content.pt-br/</guid>
-      <description>&lt;p&gt;O Hugo vem com vários &lt;a href=&#34;https://gohugo.io/content-management/shortcodes/#use-hugos-built-in-shortcodes&#34;&gt;Shortcodes Internos&lt;/a&gt; para conteúdo rico, assim como uma &lt;a href=&#34;https://gohugo.io/about/hugo-and-gdpr/&#34;&gt;Configuração de Privacidade&lt;/a&gt; e uma gama de Shortcodes simples que permitem embutir versões estáticas e sem JS de várias de redes sociais.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Rich Content</title>
       <link>https://b1d-farewell.github.io/posts/rich-content/</link>
       <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>https://b1d-farewell.github.io/posts/rich-content/</guid>
       <description>&lt;p&gt;Hugo ships with several &lt;a href=&#34;https://gohugo.io/content-management/shortcodes/#use-hugos-built-in-shortcodes&#34;&gt;Built-in Shortcodes&lt;/a&gt; for rich content, along with a &lt;a href=&#34;https://gohugo.io/about/hugo-and-gdpr/&#34;&gt;Privacy Config&lt;/a&gt; and a set of Simple Shortcodes that enable static and no-JS versions of various social media embeds.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Mais Conteúdo Rico</title>
-      <link>https://b1d-farewell.github.io/posts/more-rich-content.pt-br/</link>
-      <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://b1d-farewell.github.io/posts/more-rich-content.pt-br/</guid>
-      <description>&lt;p&gt;O Hugo Coder proporciona alguns Shortcodes Customizados.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -99,24 +75,6 @@ Hello Hello World! Goodbye Goodbye Everybody! Right alighment Link to heading Yo
       
       <guid>https://b1d-farewell.github.io/posts/placeholder-text/</guid>
       <description>&lt;p&gt;Lorem est tota propiore conpellat pectoribus de pectora summo.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Texto de Exemplo</title>
-      <link>https://b1d-farewell.github.io/posts/placeholder-text.pt-br/</link>
-      <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://b1d-farewell.github.io/posts/placeholder-text.pt-br/</guid>
-      <description>&lt;p&gt;Lorem est tota propiore conpellat pectoribus de pectora summo.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Configuração de Equações Matemáticas</title>
-      <link>https://b1d-farewell.github.io/posts/math-typesetting.pt-br/</link>
-      <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://b1d-farewell.github.io/posts/math-typesetting.pt-br/</guid>
-      <description>&lt;p&gt;Em um projeto Hugo as Notações Matemáticas podem ser usadas com a ajuda de bibliotecas JavaScript de terceiros.&lt;/p&gt;</description>
     </item>
     
     <item>

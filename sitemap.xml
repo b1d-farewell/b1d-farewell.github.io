@@ -2,14 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://b1d-farewell.github.io/tags/c&#43;&#43;/</loc>
+    <lastmod>2022-08-18T10:55:37+08:00</lastmod>
+  </url><url>
+    <loc>https://b1d-farewell.github.io/posts/2022m8d18h10m55s36/</loc>
+    <lastmod>2022-08-18T10:55:37+08:00</lastmod>
+  </url><url>
     <loc>https://b1d-farewell.github.io/</loc>
-    <lastmod>2022-08-17T19:58:53+08:00</lastmod>
+    <lastmod>2022-08-18T10:55:37+08:00</lastmod>
   </url><url>
     <loc>https://b1d-farewell.github.io/posts/</loc>
-    <lastmod>2022-08-17T19:58:53+08:00</lastmod>
+    <lastmod>2022-08-18T10:55:37+08:00</lastmod>
   </url><url>
-    <loc>https://b1d-farewell.github.io/posts/2022m8d17h19m58s51/</loc>
-    <lastmod>2022-08-17T19:58:53+08:00</lastmod>
+    <loc>https://b1d-farewell.github.io/tags/programming/</loc>
+    <lastmod>2022-08-18T10:55:37+08:00</lastmod>
+  </url><url>
+    <loc>https://b1d-farewell.github.io/tags/</loc>
+    <lastmod>2022-08-18T10:55:37+08:00</lastmod>
   </url><url>
     <loc>https://b1d-farewell.github.io/series/hugo/</loc>
     <lastmod>2022-07-25T00:00:00+00:00</lastmod>
@@ -41,32 +50,14 @@
     <loc>https://b1d-farewell.github.io/categories/syntax/</loc>
     <lastmod>2022-05-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://b1d-farewell.github.io/tags/</loc>
-    <lastmod>2022-05-15T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://b1d-farewell.github.io/categories/themes/</loc>
     <lastmod>2022-05-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://b1d-farewell.github.io/series/themes-guide/</loc>
     <lastmod>2022-05-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://b1d-farewell.github.io/posts/markdown-syntax.pt-br/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://b1d-farewell.github.io/series/guia-do-thema/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://b1d-farewell.github.io/posts/markdown-syntax/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://b1d-farewell.github.io/categories/sintaxe/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://b1d-farewell.github.io/categories/temas/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://b1d-farewell.github.io/posts/rich-content.pt-br/</loc>
-    <lastmod>2019-03-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://b1d-farewell.github.io/tags/privacy/</loc>
     <lastmod>2019-03-10T00:00:00+00:00</lastmod>
@@ -77,9 +68,6 @@
     <loc>https://b1d-farewell.github.io/tags/shortcodes/</loc>
     <lastmod>2019-03-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://b1d-farewell.github.io/posts/more-rich-content.pt-br/</loc>
-    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://b1d-farewell.github.io/posts/more-rich-content/</loc>
     <lastmod>2019-03-09T00:00:00+00:00</lastmod>
   </url><url>
@@ -88,12 +76,6 @@
   </url><url>
     <loc>https://b1d-farewell.github.io/tags/text/</loc>
     <lastmod>2019-03-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://b1d-farewell.github.io/posts/placeholder-text.pt-br/</loc>
-    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://b1d-farewell.github.io/posts/math-typesetting.pt-br/</loc>
-    <lastmod>2019-03-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://b1d-farewell.github.io/posts/math-typesetting/</loc>
     <lastmod>2019-03-08T00:00:00+00:00</lastmod>

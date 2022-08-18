@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Programming on Day in and day out</title>
+    <link>https://b1d-farewell.github.io/tags/programming/</link>
+    <description>Recent content in Programming on Day in and day out</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 18 Aug 2022 10:55:37 +0800</lastBuildDate><atom:link href="https://b1d-farewell.github.io/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C&#43;&#43;中被忽略的细节</title>
+      <link>https://b1d-farewell.github.io/posts/2022m8d18h10m55s36/</link>
+      <pubDate>Thu, 18 Aug 2022 10:55:37 +0800</pubDate>
+      
+      <guid>https://b1d-farewell.github.io/posts/2022m8d18h10m55s36/</guid>
+      <description>Integer promotion Link to heading 比int短，保值提升到int 长度不同，保值提升到更长的signed形式 符号性不同：转换符号
+int main(){ unsigned char a =0, b = 1; cout &amp;lt;&amp;lt; a - b &amp;lt;&amp;lt; endl; // 输出-1 } 但以下情形由于字符的符号性不确定，输出是不确定的
+int main(){ cout &amp;lt;&amp;lt; &amp;#39;\0&amp;#39; - &amp;#39;\xff&amp;#39; &amp;lt;&amp;lt; endl; // 如果是-fsigned-char, 输出1；-funsigned-char则输出-255 } 同理，strcmp、fgetc等标准库函数，都显式地指定了unsigned char。
+Float promotion Link to heading 在无声明或可变参数域中，float提升为double，比如printf(char const* fmt, &amp;hellip;)</description>
+    </item>
+    
+  </channel>
+</rss>
