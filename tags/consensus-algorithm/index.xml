@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Consensus Algorithm on Day in and day out</title>
+    <link>https://b1d-farewell.github.io/tags/consensus-algorithm/</link>
+    <description>Recent content in Consensus Algorithm on Day in and day out</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 18 Aug 2022 20:51:07 +0800</lastBuildDate><atom:link href="https://b1d-farewell.github.io/tags/consensus-algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Raft FAQ</title>
+      <link>https://b1d-farewell.github.io/posts/2022m8d18h20m51s7/</link>
+      <pubDate>Thu, 18 Aug 2022 20:51:07 +0800</pubDate>
+      
+      <guid>https://b1d-farewell.github.io/posts/2022m8d18h20m51s7/</guid>
+      <description>Official FAQ Link to heading What do people use Raft for ? Link to heading The most frequent use for Raft (and Paxos) is to build fault-tolerant &amp;ldquo;configuration services&amp;rdquo; whose job is to keep track of how responsibilities are currently assigned to servers in a large deployment. This job is particularly sensitive for deployments with replication; Raft-based configuration services are often used to select primaries in a way that avoids split brain.</description>
+    </item>
+    
+  </channel>
+</rss>
