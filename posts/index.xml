@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Day in and day out</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 18 Aug 2022 10:55:37 +0800</lastBuildDate><atom:link href="https://b1d-farewell.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 18 Aug 2022 20:51:07 +0800</lastBuildDate><atom:link href="https://b1d-farewell.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Raft FAQ</title>
+      <link>https://b1d-farewell.github.io/posts/2022m8d18h20m51s7/</link>
+      <pubDate>Thu, 18 Aug 2022 20:51:07 +0800</pubDate>
+      
+      <guid>https://b1d-farewell.github.io/posts/2022m8d18h20m51s7/</guid>
+      <description>Official FAQ Link to heading What do people use Raft for ? Link to heading The most frequent use for Raft (and Paxos) is to build fault-tolerant &amp;ldquo;configuration services&amp;rdquo; whose job is to keep track of how responsibilities are currently assigned to servers in a large deployment. This job is particularly sensitive for deployments with replication; Raft-based configuration services are often used to select primaries in a way that avoids split brain.</description>
+    </item>
+    
     <item>
       <title>C&#43;&#43;中被忽略的细节</title>
       <link>https://b1d-farewell.github.io/posts/2022m8d18h10m55s36/</link>

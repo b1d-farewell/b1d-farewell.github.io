@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+  Raft FAQ · Day in and day out
+</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net/; form-action 'self'; frame-src 'self'; img-src * 'self'; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/; script-src 'self' 'unsafe-inline' https://www.google-analytics.com https://cdn.jsdelivr.net/; prefetch-src 'self'; connect-src 'self' https://www.google-analytics.com;">
+
+
+
+
+<meta name="author" content="b1d-farewell">
+<meta name="description" content="Official FAQ Link to heading What do people use Raft for ? Link to heading The most frequent use for Raft (and Paxos) is to build fault-tolerant &ldquo;configuration services&rdquo; whose job is to keep track of how responsibilities are currently assigned to servers in a large deployment. This job is particularly sensitive for deployments with replication; Raft-based configuration services are often used to select primaries in a way that avoids split brain.">
+<meta name="keywords" content="blog,developer,personal">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Raft FAQ"/>
+<meta name="twitter:description" content="Official FAQ Link to heading What do people use Raft for ? Link to heading The most frequent use for Raft (and Paxos) is to build fault-tolerant &ldquo;configuration services&rdquo; whose job is to keep track of how responsibilities are currently assigned to servers in a large deployment. This job is particularly sensitive for deployments with replication; Raft-based configuration services are often used to select primaries in a way that avoids split brain."/>
+
+<meta property="og:title" content="Raft FAQ" />
+<meta property="og:description" content="Official FAQ Link to heading What do people use Raft for ? Link to heading The most frequent use for Raft (and Paxos) is to build fault-tolerant &ldquo;configuration services&rdquo; whose job is to keep track of how responsibilities are currently assigned to servers in a large deployment. This job is particularly sensitive for deployments with replication; Raft-based configuration services are often used to select primaries in a way that avoids split brain." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://b1d-farewell.github.io/posts/2022m8d18h20m51s7/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-08-18T20:51:07+08:00" />
+<meta property="article:modified_time" content="2022-08-18T20:51:07+08:00" />
+
+
+
+
+
+<link rel="canonical" href="https://b1d-farewell.github.io/posts/2022m8d18h20m51s7/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.c4d7e93a158eda5a65b3df343745d2092a0a1e2170feeec909b8a89443903c6a.css" integrity="sha256-xNfpOhWO2lpls980N0XSCSoKHiFw/u7JCbiolEOQPGo=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.39e41a7f16bdf8cb16e43cae7d714fa1016f1d2d2898a5b3f27f42c9979204e2.css" integrity="sha256-OeQafxa9&#43;MsW5DyufXFPoQFvHS0omKWz8n9CyZeSBOI=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<meta name="generator" content="Hugo 0.101.0" />
+
+
+
+
+
+  </head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Day in and day out
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/contact/">Contact me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://b1d-farewell.github.io/posts/2022m8d18h20m51s7/">
+              Raft FAQ
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2022-08-18T20:51:07&#43;08:00">
+                August 18, 2022
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              10-minute read
+            </span>
+          </div>
+          
+          
+          
+        </div>
+      </header>
+
+      <div>
+        
+        <h2 id="official-faq">
+  Official FAQ
+  <a class="heading-link" href="#official-faq">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="what-do-people-use-raft-for-">
+  What do people use Raft for ?
+  <a class="heading-link" href="#what-do-people-use-raft-for-">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>The most frequent use for Raft (and Paxos) is to build fault-tolerant &ldquo;configuration services&rdquo; whose job is to keep track of how responsibilities are currently assigned to servers in a large deployment. This job is particularly sensitive for deployments with replication; Raft-based configuration services are often used to select primaries in a way that avoids split brain. The VMware FT test-and-set server is a simple example of a configuration service. Chubby, ZooKeeper, and etcd are more powerful fault-tolerant configuration services based on Raft or Paxos; they are widely used.</li>
+<li>Some databases, such as Spanner, CockroachDB, and Lab 3, use Raft or Paxos to replicate the data. (In contrast, GFS, VMware FT, and Chain Replication use simpler primary-backup for the data.) Some databases use Raft or Paxos in two different ways: for the configuration service that assigns responsibilities to servers (for every shard, who is currently primary and who are backups), and separately to handle the data within each shard.</li>
+</ul>
+<h3 id="does-raft-sacrifice-anything-for-simplicity">
+  Does Raft sacrifice anything for simplicity?
+  <a class="heading-link" href="#does-raft-sacrifice-anything-for-simplicity">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Raft gives up some performance in return for clarity; for example:</p>
+<ul>
+<li>batching落盘</li>
+<li>pipelining AppendEntries</li>
+<li>减小snapshot数据量，只落盘最近更新的部分</li>
+<li>同理，如果follower已经有落后的snapshot，那没必要发送完整的snapshot</li>
+<li>由于log的顺序约束，每次只执行一个操作，没有充分利用单服务器上的多核处理能力</li>
+</ul>
+<h3 id="is-raft-used-in-real-world-software-or-do-companies-generally-roll-their-own-flavor-of-paxos-or-use-a-different-consensus-protocol">
+  Is Raft used in real-world software, or do companies generally roll their own flavor of Paxos (or use a different consensus protocol)?
+  <a class="heading-link" href="#is-raft-used-in-real-world-software-or-do-companies-generally-roll-their-own-flavor-of-paxos-or-use-a-different-consensus-protocol">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>There are several real-world users of Raft: <a href="https://docs.docker.com/engine/swarm/raft/">Docker</a>, <a href="https://etcd.io">etcd</a>, and MongoDB. Other systems said to be using Raft include CockroachDB, RethinkDB, and TiKV. Maybe you can find more starting at <a href="http://raft.github.io/">http://raft.github.io/</a></li>
+<li>On the other hand, many real-world state-machine replication systems (Google&rsquo;s Chubby, ZooKeeper&rsquo;s ZAB) are derived from the older Multi-Paxos and Viewstamped Replication protocols.</li>
+</ul>
+<h3 id="what-is-paxos-in-what-sense-is-raft-simpler">
+  What is Paxos? In what sense is Raft simpler?
+  <a class="heading-link" href="#what-is-paxos-in-what-sense-is-raft-simpler">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>There is a protocol called Paxos that allows a set of servers to agree on a single value. While Paxos requires some thought to understand, it is far simpler than Raft. Here&rsquo;s an easy-to-read paper about <a href="http://css.csail.mit.edu/6.824/2014/papers/paxos-simple.pdf">Paxos</a></li>
+<li>However, Paxos solves a smaller problem than Raft. To build a real-world replicated service, the replicas need to agree on an indefinite sequence of values (the client commands), and they need ways to efficiently recover when servers crash and restart or miss messages. People have built such systems with Paxos as the starting point; look up Google&rsquo;s Chubby and Paxos Made Live papers, and ZooKeeper/ZAB. There is also a protocol called Viewstamped Replication; it&rsquo;s a good design, and similar to Raft, but the paper about it is hard to understand.</li>
+<li>These real-world protocols are complex, and (before Raft) there was not a good introductory paper describing how they work. The Raft paper, in contrast, is relatively easy to read and fairly detailed. That&rsquo;s a big contribution.</li>
+<li>Whether the Raft protocol is inherently easier to understand than something else is not clear. The issue is clouded by a lack of good descriptions of other real-world protocols. In addition, Raft sacrifices performance for clarity in a number of ways; that&rsquo;s fine for a tutorial but not always desirable in a real-world protocol.</li>
+</ul>
+<h3 id="how-does-rafts-performance-compare-to-paxos-in-real-world-applications">
+  How does Raft&rsquo;s performance compare to Paxos in real-world applications?
+  <a class="heading-link" href="#how-does-rafts-performance-compare-to-paxos-in-real-world-applications">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>
+<p>The fastest Paxos-derived protocols are probably faster than Raft as described in the paper; have a look at ZAB/ZooKeeper and Paxos Made Live. On the other hand, etcd3 (using Raft) claims to have achieved better performance than zookeeper and many Paxos-based implementations (<a href="https://www.youtube.com/watch?v=hQigKX0MxPw)">https://www.youtube.com/watch?v=hQigKX0MxPw)</a>.</p>
+</li>
+<li>
+<p>There are situations where Raft&rsquo;s leader is not so great. If the datacenters containing replicas and clients are distant from each other, people sometimes use agreement protocols derived from original Paxos. The reason is that Paxos has no leader; any replica can start an agreement; so clients can talk to the replica in their local datacenter rather than having to talk to a leader in a distant datacenter. ePaxos is an example.</p>
+</li>
+</ul>
+<h3 id="are-there-systems-like-raft-that-can-survive-and-continue-to-operate-when-only-a-minority-of-the-cluster-is-active">
+  Are there systems like Raft that can survive and continue to operate when only a minority of the cluster is active?
+  <a class="heading-link" href="#are-there-systems-like-raft-that-can-survive-and-continue-to-operate-when-only-a-minority-of-the-cluster-is-active">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>
+<p>Not with Raft&rsquo;s properties. But you can do it with different assumptions, or different client-visible semantics. The basic problem is split-brain &ndash; the possibility of multiple diverging copies of the state, caused by multiple subsets of the replicas mutating the state without being aware of each other. There are two solution approaches that I know of.</p>
+</li>
+<li>
+<p>If somehow clients and servers can learn exactly which servers are live and which are dead (as opposed to live but unreachable due to network failure), then one can build a system that can function as long as one is alive, picking (say) the lowest-numbered server known to be alive. However, it&rsquo;s usually impractical for one computer to decide if another computer is dead, as opposed to the network losing the messages between them. One way to do it is to have a human decide: the human can inspect the servers and decide which are alive and dead.</p>
+</li>
+<li>
+<p>The other approach is to allow split-brain operation, and to have a way for servers to reconcile the resulting diverging state after partitions are healed. This can be made to work for some kinds of services, but has complex client-visible semantics (usually called &ldquo;eventual consistency&rdquo;). Have a look at the COPS, FuzzyLog, and Bitcoin papers which are assigned later in the course.</p>
+</li>
+</ul>
+<h3 id="in-raft-the-service-which-is-being-replicated-is-not-available-to-the-clients-during-an-election-process-in-practice-how-much-of-a-problem-does-this-cause">
+  In Raft, the service which is being replicated is not available to the clients during an election process. In practice how much of a problem does this cause?
+  <a class="heading-link" href="#in-raft-the-service-which-is-being-replicated-is-not-available-to-the-clients-during-an-election-process-in-practice-how-much-of-a-problem-does-this-cause">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>The client-visible pause seems likely to be on the order of a tenth of a second. The authors expect failures (and thus elections) to be rare, since they only happen if machines or the network fails. Many servers and networks stay up continuously for months or even years at a time, so this doesn&rsquo;t seem like a huge problem for many applications.</li>
+</ul>
+<h3 id="are-there-other-consensus-systems-that-dont-have-leader-election-pauses">
+  Are there other consensus systems that don&rsquo;t have leader-election pauses?
+  <a class="heading-link" href="#are-there-other-consensus-systems-that-dont-have-leader-election-pauses">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>There are versions of Paxos-based replication that do not have a leader or elections, and thus don&rsquo;t suffer from pauses during elections. Instead, any server can effectively act as leader at any time. The cost of not having a leader is that more messages are required for each agreement.</li>
+</ul>
+<h3 id="why-cant-a-malicious-person-take-over-a-raft-server-or-forge-incorrect-raft-messages">
+  Why can&rsquo;t a malicious person take over a Raft server, or forge incorrect Raft messages?
+  <a class="heading-link" href="#why-cant-a-malicious-person-take-over-a-raft-server-or-forge-incorrect-raft-messages">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>
+<p>Raft doesn&rsquo;t include defenses against attacks like this. It assumes that all participants are following the protocol, and that only the correct set of servers is participating.</p>
+</li>
+<li>
+<p>A real deployment would have to keep out malicious attackers. The most straightforward option is to place the servers behind a firewall to filter out packets from random people on the Internet, and to ensure that all computers and people inside the firewall are trustworthy.</p>
+</li>
+<li>
+<p>There may be situations where Raft has to operate on the same network as potential attackers. In that case a good plan would be to authenticate the Raft packets with some cryptographic scheme. For example, give each legitimate Raft server a public/private key pair, have it sign all the packets it sends, give each server a list of the public keys of legitimate Raft servers, and have the servers ignore packets that aren&rsquo;t signed by a key on that list.</p>
+</li>
+</ul>
+<h3 id="the-paper-mentions-that-raft-works-under-all-non-byzantine-conditions-what-are-byzantine-conditions-and-why-could-they-make-raft-fail">
+  The paper mentions that Raft works under all non-Byzantine conditions. What are Byzantine conditions and why could they make Raft fail?
+  <a class="heading-link" href="#the-paper-mentions-that-raft-works-under-all-non-byzantine-conditions-what-are-byzantine-conditions-and-why-could-they-make-raft-fail">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>
+<p>&ldquo;Non-Byzantine conditions&rdquo; means that the servers are fail-stop: they either follow the Raft protocol correctly, or they halt. For example, most power failures are non-Byzantine because they cause computers to simply stop executing instructions; if a power failure occurs, Raft may stop operating, but it won&rsquo;t send incorrect results to clients.</p>
+</li>
+<li>
+<p>Byzantine failure refers to situations in which some computers execute incorrectly, because of bugs or because someone malicious is controlling the computers. If a failure like this occurs, Raft may send incorrect results to clients.</p>
+</li>
+<li>
+<p>Most of 6.824 is about tolerating non-Byzantine faults. Correct operation despite Byzantine faults is more difficult; we&rsquo;ll touch on this topic at the end of the term.</p>
+</li>
+</ul>
+<h3 id="what-if-a-client-sends-a-request-to-a-leader-but-the-leader-crashes-before-sending-the-client-request-to-all-followers-and-the-new-leader-doesnt-have-the-request-in-its-log-wont-that-cause-the-client-request-to-be-lost">
+  What if a client sends a request to a leader, but the leader crashes before sending the client request to all followers, and the new leader doesn&rsquo;t have the request in its log? Won&rsquo;t that cause the client request to be lost?
+  <a class="heading-link" href="#what-if-a-client-sends-a-request-to-a-leader-but-the-leader-crashes-before-sending-the-client-request-to-all-followers-and-the-new-leader-doesnt-have-the-request-in-its-log-wont-that-cause-the-client-request-to-be-lost">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>
+<p>Yes, the request may be lost. If a log entry isn&rsquo;t committed, Raft may not preserve it across a leader change.</p>
+</li>
+<li>
+<p>That&rsquo;s OK because the client could not have received a reply to its request if Raft didn&rsquo;t commit the request. The client will know (by seeing a timeout or leader change) that its request may have been lost, and will re-send it.</p>
+</li>
+<li>
+<p>The fact that clients can re-send requests means that the system has to be on its guard against duplicate requests; you&rsquo;ll deal with this in Lab 3.</p>
+</li>
+</ul>
+<h3 id="if-theres-a-network-partition-can-raft-end-up-with-two-leaders-and-split-brain">
+  If there&rsquo;s a network partition, can Raft end up with two leaders and split brain?
+  <a class="heading-link" href="#if-theres-a-network-partition-can-raft-end-up-with-two-leaders-and-split-brain">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>No. There can be at most one active leader. A new leader can only be elected if it can contact a majority of servers (including itself) with RequestVote RPCs. So if there&rsquo;s a partition, and one of the partitions contains a majority of the servers, that one partition can elect a new leader. Other partitions must have only a minority, so they cannot elect a leader. If there is no majority partition, there will be no leader (until someone repairs the network).</li>
+</ul>
+<h3 id="suppose-a-new-leader-is-elected-while-the-network-is-partitioned-but-the-old-leader-is-in-a-different-partition-how-will-the-old-leader-know-to-stop-committing-new-entries">
+  Suppose a new leader is elected while the network is partitioned, but the old leader is in a different partition. How will the old leader know to stop committing new entries?
+  <a class="heading-link" href="#suppose-a-new-leader-is-elected-while-the-network-is-partitioned-but-the-old-leader-is-in-a-different-partition-how-will-the-old-leader-know-to-stop-committing-new-entries">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>The old leader will either not be able to get a majority of successful responses to its AppendEntries RPCs (if it&rsquo;s in a minority partition), or if it can talk to a majority, that majority must overlap with the new leader&rsquo;s majority, and the servers in the overlap will tell the old leader that there&rsquo;s a higher term. That will cause the old leader to switch to follower.</li>
+</ul>
+<h3 id="what-if-the-election-timeout-is-too-short-will-that-cause-raft-to-malfunction">
+  What if the election timeout is too short? Will that cause Raft to malfunction?
+  <a class="heading-link" href="#what-if-the-election-timeout-is-too-short-will-that-cause-raft-to-malfunction">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>
+<p>A bad choice of election timeout does not affect safety, it only affects liveness.</p>
+</li>
+<li>
+<p>If the election timeout is too small, then followers may repeatedly time out before the leader has a chance to send out any AppendEntries. In that case Raft may spend all its time electing new leaders, and no time processing client requests. If the election timeout is too large, then there will be a needlessly large pause after a leader failure before a new leader is elected.</p>
+</li>
+</ul>
+<h3 id="why-randomize-election-timeouts">
+  Why randomize election timeouts?
+  <a class="heading-link" href="#why-randomize-election-timeouts">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>To reduce the chance that multiple peers simultaneously become candidates and divide the votes among themselves so that no-one gets a majority.</li>
+</ul>
+<h3 id="can-a-candidate-declare-itself-the-leader-as-soon-as-it-receives-votes-from-a-majority-and-not-bother-waiting-for-further-requestvote-replies">
+  Can a candidate declare itself the leader as soon as it receives votes from a majority, and not bother waiting for further RequestVote replies?
+  <a class="heading-link" href="#can-a-candidate-declare-itself-the-leader-as-soon-as-it-receives-votes-from-a-majority-and-not-bother-waiting-for-further-requestvote-replies">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>Yes &ndash; a majority is sufficient. It would be a mistake to wait longer, because some peers might have failed and thus not ever reply.</li>
+</ul>
+<h3 id="what-network-does-raft-assume">
+  What network does Raft assume?
+  <a class="heading-link" href="#what-network-does-raft-assume">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>The network is unreliable: it may lose requests and replies and delay them.  Raft&rsquo;s RPC library doesn&rsquo;t provide reliability; it is best effort (e.g,. it sends a request but the network may drop it). The lab&rsquo;s RPC library provides similar semantics: it may lose requests, lose replies, delay messages, and entirely disconnect particular hosts.</li>
+</ul>
+<h3 id="what-is-the-purpose-of-the-votedfor-check-in-the-requestvote-rpc">
+  What is the purpose of the votedFor check in the requestVote RPC?
+  <a class="heading-link" href="#what-is-the-purpose-of-the-votedfor-check-in-the-requestvote-rpc">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>Two candidates may start an election at the same time for the same new term. A follower should vote only for one of them.</li>
+</ul>
+<h3 id="when-are-followers-log-entries-sent-to-their-state-machines">
+  When are followers&rsquo; log entries sent to their state machines?
+  <a class="heading-link" href="#when-are-followers-log-entries-sent-to-their-state-machines">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>Only after the leader says that an entry is committed, using the leaderCommit field of the AppendEntries RPC. At that point the follower can execute (or apply) the log entry, which for us means send it on the applyCh.</li>
+</ul>
+<h3 id="what-happens-if-a-half-or-more-of-the-servers-die">
+  What happens if a half (or more) of the servers die?
+  <a class="heading-link" href="#what-happens-if-a-half-or-more-of-the-servers-die">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>The service can&rsquo;t make any progress; it will keep trying to elect a leader over and over. If/when enough servers come back to life with persistent Raft state intact, they will be able to elect a leader and continue.</li>
+</ul>
+
+      </div>
+
+      <footer>
+        
+
+
+        
+        
+        
+      </footer>
+    </article>
+
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2022
+     b1d-farewell 
+    ·
+    
+    Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.236049395dc3682fb2719640872958e12f1f24067bb09c327b233e6290c7edac.js" integrity="sha256-I2BJOV3DaC&#43;ycZZAhylY4S8fJAZ7sJwyeyM&#43;YpDH7aw="></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+
+</html>
