@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+  expression - strange behavior of std::cout in c&#43;&#43; - Stack Overflow · Day in and day out
+</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net/; form-action 'self'; frame-src 'self'; img-src * 'self'; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/; script-src 'self' 'unsafe-inline' https://www.google-analytics.com https://cdn.jsdelivr.net/; prefetch-src 'self'; connect-src 'self' https://www.google-analytics.com;">
+
+
+
+
+<meta name="author" content="b1d-farewell">
+<meta name="description" content="expression - strange behavior of std::cout in c&#43;&#43; - Stack Overflow Link to heading [!example]- 🧷内部链接 🌐外部链接 URI:: 🧷 🌐 intURI:: 🧷内部链接
+%%
+[!example]&#43; Comments
+TABLE WITHOUT ID link(Source, dateformat(date(Source), &#34;yyyy-MM-dd&#34;)) as Date___, regexreplace(rows.Comments,&#34;^@@\[\[.&#43;?\]\]\s&#34;,&#34;&#34;) as &#34;Comments&#34; FROM &#34;journals&#34; WHERE contains(cmnt, this.file.name) FLATTEN cmnt as Comments WHERE contains(Comments, this.file.name) GROUP BY file.link as Source SORT rows.file.day desc Description:: #include &lt;iostream&gt;
+int a(int &amp;x) { x = -1; return x; }">
+<meta name="keywords" content="blog,developer,personal">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="expression - strange behavior of std::cout in c&#43;&#43; - Stack Overflow"/>
+<meta name="twitter:description" content="expression - strange behavior of std::cout in c&#43;&#43; - Stack Overflow Link to heading [!example]- 🧷内部链接 🌐外部链接 URI:: 🧷 🌐 intURI:: 🧷内部链接
+%%
+[!example]&#43; Comments
+TABLE WITHOUT ID link(Source, dateformat(date(Source), &#34;yyyy-MM-dd&#34;)) as Date___, regexreplace(rows.Comments,&#34;^@@\[\[.&#43;?\]\]\s&#34;,&#34;&#34;) as &#34;Comments&#34; FROM &#34;journals&#34; WHERE contains(cmnt, this.file.name) FLATTEN cmnt as Comments WHERE contains(Comments, this.file.name) GROUP BY file.link as Source SORT rows.file.day desc Description:: #include &lt;iostream&gt;
+int a(int &amp;x) { x = -1; return x; }"/>
+
+<meta property="og:title" content="expression - strange behavior of std::cout in c&#43;&#43; - Stack Overflow" />
+<meta property="og:description" content="expression - strange behavior of std::cout in c&#43;&#43; - Stack Overflow Link to heading [!example]- 🧷内部链接 🌐外部链接 URI:: 🧷 🌐 intURI:: 🧷内部链接
+%%
+[!example]&#43; Comments
+TABLE WITHOUT ID link(Source, dateformat(date(Source), &#34;yyyy-MM-dd&#34;)) as Date___, regexreplace(rows.Comments,&#34;^@@\[\[.&#43;?\]\]\s&#34;,&#34;&#34;) as &#34;Comments&#34; FROM &#34;journals&#34; WHERE contains(cmnt, this.file.name) FLATTEN cmnt as Comments WHERE contains(Comments, this.file.name) GROUP BY file.link as Source SORT rows.file.day desc Description:: #include &lt;iostream&gt;
+int a(int &amp;x) { x = -1; return x; }" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://b1d-farewell.github.io/posts/expression-strange-behavior-of-stdcout-in-c&#43;&#43;-stack-overflow-2022-08-19/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-08-19T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-08-19T00:00:00+00:00" />
+
+
+
+
+
+<link rel="canonical" href="https://b1d-farewell.github.io/posts/expression-strange-behavior-of-stdcout-in-c&#43;&#43;-stack-overflow-2022-08-19/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.c4d7e93a158eda5a65b3df343745d2092a0a1e2170feeec909b8a89443903c6a.css" integrity="sha256-xNfpOhWO2lpls980N0XSCSoKHiFw/u7JCbiolEOQPGo=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.39e41a7f16bdf8cb16e43cae7d714fa1016f1d2d2898a5b3f27f42c9979204e2.css" integrity="sha256-OeQafxa9&#43;MsW5DyufXFPoQFvHS0omKWz8n9CyZeSBOI=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<meta name="generator" content="Hugo 0.101.0" />
+
+
+
+
+
+  </head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Day in and day out
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/contact/">Contact me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://b1d-farewell.github.io/posts/expression-strange-behavior-of-stdcout-in-c&#43;&#43;-stack-overflow-2022-08-19/">
+              expression - strange behavior of std::cout in c&#43;&#43; - Stack Overflow
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2022-08-19T00:00:00Z">
+                August 19, 2022
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              One-minute read
+            </span>
+          </div>
+          
+          
+          
+        </div>
+      </header>
+
+      <div>
+        
+        <h1 id="expression---strange-behavior-of-stdcout-in-c---stack-overflow">
+  expression - strange behavior of std::cout in c++ - Stack Overflow
+  <a class="heading-link" href="#expression---strange-behavior-of-stdcout-in-c---stack-overflow">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<blockquote>
+<p>[!example]- <a href="http://localhost:7026/unread/4">🧷内部链接</a> <a href="">🌐外部链接</a> <br>
+URI:: <a href="http://localhost:7026/unread/4">🧷</a> <a href="">🌐</a>
+intURI:: <a href="http://localhost:7026/reading/4">🧷内部链接</a></p>
+</blockquote>
+<p>%%</p>
+<blockquote>
+<p>[!example]+ <strong>Comments</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>TABLE 
+</span></span><span style="display:flex;"><span>    WITHOUT ID
+</span></span><span style="display:flex;"><span>    link(Source, dateformat(date(Source), &#34;yyyy-MM-dd&#34;)) as Date___, 
+</span></span><span style="display:flex;"><span>    regexreplace(rows.Comments,&#34;^@@\[\[.+?\]\]\s&#34;,&#34;&#34;) as &#34;Comments&#34;
+</span></span><span style="display:flex;"><span>FROM &#34;journals&#34;
+</span></span><span style="display:flex;"><span>WHERE  contains(cmnt, this.file.name)
+</span></span><span style="display:flex;"><span>FLATTEN cmnt as Comments
+</span></span><span style="display:flex;"><span>WHERE contains(Comments, this.file.name)
+</span></span><span style="display:flex;"><span>GROUP BY file.link as Source
+</span></span><span style="display:flex;"><span>SORT rows.file.day desc
+</span></span></code></pre></div><p><strong>Description</strong>:: #include &lt;iostream&gt;</p>
+</blockquote>
+<p>int a(int &amp;x) {
+x = -1;
+return x;
+}</p>
+<p>int main () {
+int x = 5;
+std::cout &lt;&lt; a(x) &lt;&lt; &quot; &quot; &lt;&lt; x &lt;&lt; std::endl;
+}
+Why output is &ldquo;-1&hellip;
+%%</p>
+<blockquote>
+<p>[!md] Metadata<br>
+<strong>标题</strong>:: <a href="https://stackoverflow.com/questions/19231779/strange-behavior-of-stdcout-in-c?rq=1">expression - strange behavior of std::cout in c++ - Stack Overflow</a><br>
+<strong>日期</strong>:: [[2022-08-19]]</p>
+</blockquote>
+<h2 id="annotations">
+  Annotations
+  <a class="heading-link" href="#annotations">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<blockquote>
+<p>[!srhl6] [[SR4@expression - strange behavior of std::cout in c++ - Stack Overflow|📄]] <!-- raw HTML omitted -->Highlights<!-- raw HTML omitted --> <a href="http://localhost:7026/unread/4#id=1660854650227">🧷</a> <a href="#id=1660854650227">🌐</a><br>
+evaluation of <code>a(x)</code> and <code>x</code> is not specified. It&rsquo;s unspecified behaviour what happens, in your case the compiler decided to evaluate <code>x</code> first, <code>a(x)</code> afterwards.
+^sran-1660854650227</p>
+</blockquote>
+
+      </div>
+
+      <footer>
+        
+
+
+        
+        
+        
+      </footer>
+    </article>
+
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2022
+     b1d-farewell 
+    ·
+    
+    Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.236049395dc3682fb2719640872958e12f1f24067bb09c327b233e6290c7edac.js" integrity="sha256-I2BJOV3DaC&#43;ycZZAhylY4S8fJAZ7sJwyeyM&#43;YpDH7aw="></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+
+</html>

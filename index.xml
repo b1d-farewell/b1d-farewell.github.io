@@ -6,7 +6,20 @@
     <description>Recent content on Day in and day out</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 18 Aug 2022 20:51:07 +0800</lastBuildDate><atom:link href="https://b1d-farewell.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://b1d-farewell.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>expression - strange behavior of std::cout in c&#43;&#43; - Stack Overflow</title>
+      <link>https://b1d-farewell.github.io/posts/expression-strange-behavior-of-stdcout-in-c&#43;&#43;-stack-overflow-2022-08-19/</link>
+      <pubDate>Fri, 19 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://b1d-farewell.github.io/posts/expression-strange-behavior-of-stdcout-in-c&#43;&#43;-stack-overflow-2022-08-19/</guid>
+      <description>expression - strange behavior of std::cout in c++ - Stack Overflow Link to heading [!example]- 🧷内部链接 🌐外部链接 URI:: 🧷 🌐 intURI:: 🧷内部链接
+%%
+[!example]+ Comments
+TABLE WITHOUT ID link(Source, dateformat(date(Source), &amp;#34;yyyy-MM-dd&amp;#34;)) as Date___, regexreplace(rows.Comments,&amp;#34;^@@\[\[.+?\]\]\s&amp;#34;,&amp;#34;&amp;#34;) as &amp;#34;Comments&amp;#34; FROM &amp;#34;journals&amp;#34; WHERE contains(cmnt, this.file.name) FLATTEN cmnt as Comments WHERE contains(Comments, this.file.name) GROUP BY file.link as Source SORT rows.file.day desc Description:: #include &amp;lt;iostream&amp;gt;
+int a(int &amp;amp;x) { x = -1; return x; }</description>
+    </item>
+    
     <item>
       <title>Raft FAQ</title>
       <link>https://b1d-farewell.github.io/posts/2022m8d18h20m51s7/</link>
